@@ -1,10 +1,10 @@
-# Qdrant web-ui
+# Semantic Folder web-ui
 
-This is a self-hosted web UI for [Qdrant](https://github.com/qdrant/qdrant) Vector Search Engine.
+This is a self-hosted web UI for [Semantic Folder](https://github.com/WashingtonGT/sf-web-ui) Vector Search Engine.
 
-This UI is supposed to be served by Qdrant itself, but you can use it as a standalone application.
+This UI is supposed to be served by connect the Semantic Folder services.
 
-Main goal of this UI is to provide a simple way to view and manage your collections.
+Main goal of this UI is to provide a simple way to view and manage your knowledge graph.
 
 Similar to [Kibana](https://www.elastic.co/kibana) for Elasticsearch, but does not require any additional services.
 
