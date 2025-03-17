@@ -30,13 +30,13 @@ const Welcome = () => {
     <Box component="main" px={4}>
       <Box component="header">
         <Typography component="h1" variant="h4" mt={4} mb={6}>
-          Welcome to Qdrant!
+          Welcome to Sementic Folder!
         </Typography>
       </Box>
 
       <Box component="section">
         <Typography component="h2" variant="h5" mb="1rem">
-          Begin by setting up your collection
+          Begin by setting up your folder
         </Typography>
         <StyledAbstract>
           Start building your app by creating a collection and inserting your vectors. Interactive tutorials will show
