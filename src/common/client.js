@@ -1,15 +1,12 @@
-import { QdrantClient } from '@qdrant/js-client-rest';
 import { getBaseURL } from './utils';
 
 /**
- * Extended QdrantClient class with additional methods
- * @class
- * @extends QdrantClient
+ * Lightweight Semantic folder client to API Services
  */
-export class QdrantClientExtended extends QdrantClient {
+
+export class SFClientService {
   #downloadController;
   constructor({ url, apiKey, port }) {
-    super({ url, apiKey, port, checkCompatibility: false, headers: { 'x-inference-proxy': 'true' } });
 
     this.downloadSnapshot = this.downloadSnapshot.bind(this);
     this.getSnapshotUploadUrl = this.getSnapshotUploadUrl.bind(this);
@@ -80,13 +77,16 @@ export class QdrantClientExtended extends QdrantClient {
   getApiKey() {
     return this.apiKey;
   }
+
+
+
 }
 
-export default function qdrantClient({ apiKey }) {
+export default function sfClient({ apiKey }) {
   let url;
-  let port = 6333;
+  let port = 8000;
   if (process.env.NODE_ENV === 'development') {
-    url = 'http://localhost:6333';
+    url = 'http://localhost:8000';
   } else {
     url = getBaseURL();
     if (window.location.port) {
@@ -106,5 +106,5 @@ export default function qdrantClient({ apiKey }) {
     port,
   };
 
-  return new QdrantClientExtended(options);
+  return new SFClientService(options);
 }

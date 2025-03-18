@@ -21,7 +21,8 @@ import { Close } from '@mui/icons-material';
 async function fetchNotifications() {
   try {
     const issues = await axios.get('/issues');
-    return issues.data.result.issues;
+    console.log('issues', issues);
+    return issues.data;
   } catch (error) {
     console.log('error', error);
   }

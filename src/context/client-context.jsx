@@ -1,6 +1,6 @@
 import React, { useContext, createContext, useState, useEffect } from 'react';
 import { axiosInstance, setupAxios } from '../common/axios';
-import qdrantClient from '../common/client';
+import sfClient from '../common/client';
 import { bigIntJSON } from '../common/bigIntJSON';
 import { isTokenRestricted } from '../config/restricted-routes';
 
@@ -44,7 +44,7 @@ export const ClientProvider = (props) => {
   // TODO: Switch to Reducer if we have more settings to track.
   const [settings, setSettings] = useState(getPersistedSettings());
 
-  const client = qdrantClient(settings);
+  const client = sfClient(settings);
 
   setupAxios(axiosInstance, settings);
 
